@@ -1,12 +1,11 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import FormControl from "react-bootstrap/FormControl";
 import ButtonToolbar from "react-bootstrap/ButtonToolbar";
 import { Row, Col, Image } from "react-bootstrap";
 import logo from "../assets/giphy-logo.png";
 
-class TopGifs extends Component {
+class Search extends Component {
   render() {
     return (
       <>
@@ -17,20 +16,20 @@ class TopGifs extends Component {
         </Row>
 
         <ButtonToolbar
-          className="mb-3 justify-content-center mt-1"
+          className="mb-3 md-3 justify-content-center mt-1"
           aria-label="Toolbar with Button groups"
         >
-          <Link to="/search" className="d-flex">
-            <FormControl type="text" placeholder="" aria-label="Search" className="mr-2"/>
+          <div className="d-flex">
+            <FormControl type="text" placeholder="" aria-label="Search" className="mr-2" autoFocus/>
 
             <Button variant="primary">Buscar</Button>
-          </Link>
+          </div>
         </ButtonToolbar>
 
-        <h5>Top Gifs</h5>
+        <h5>Resultados para " "</h5>
       </>
     );
   }
 }
 
-export default TopGifs;
+export default Search;
