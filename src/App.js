@@ -7,6 +7,7 @@ import Container from 'react-bootstrap/Container';
 import TopNavbar from './components/common/TopNavbar';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import TopGifs from './components/TopGifs';
+import Search from './components/Search';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
             <TopNavbar/>
             <Switch>
               <Route exact path="/" component={TopGifs}/>
+              <Route excat path="/search" component={Search} />
             </Switch>
           </Container>
         </Fragment>
