@@ -50,11 +50,17 @@ class TopGifs extends Component {
         <h4 className="mb-4">Top Gifs</h4>
         <Row className="d-flex wrap m-0">
           {topGifs.map((gif, idx) => (
-            <Col key={idx} md="2" xs="6" className="mb-2 p-1" style={{maxWidth: 'max-content'}}>
+            <Col
+              key={idx}
+              md="2"
+              xs="6"
+              className="mb-2 p-1"
+              style={{ maxWidth: "max-content" }}
+            >
               <Image
                 src={`http://media.giphy.com/media/${gif.id}/giphy.gif`}
                 alt={gif.title}
-                style={{ maxWidth: "100%"}}
+                style={{ maxWidth: "100%" }}
               />
             </Col>
           ))}

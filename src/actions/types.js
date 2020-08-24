@@ -1,2 +1,3 @@
 export const GET_TOP_GIFS = "GET_TOP_GIFS";
 export const SEARCH_GIFS = "SEARCH_GIFS";
+export const GIF_FILTER_CHANGE = "GIF_FILTER_CHANGE";

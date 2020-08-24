@@ -1,7 +1,9 @@
-import { GET_TOP_GIFS } from "../actions/types.js";
+import { GET_TOP_GIFS, SEARCH_GIFS, GIF_FILTER_CHANGE } from "../actions/types.js";
 
 const initialState = {
-  topGifs: [],
+	topGifs: [],
+	gifsFound: [],
+	searchParam: ""
 };
 
 export default function (state = initialState, action) {
@@ -9,7 +11,18 @@ export default function (state = initialState, action) {
     case GET_TOP_GIFS:
       return {
         ...state,
-        topGifs: action.payload,
+        topGifs: action.payload
+			};
+		case SEARCH_GIFS:
+			return {
+				...state,
+				gifsFound: action.payload,
+			};
+		case GIF_FILTER_CHANGE:
+			return {
+        ...state,
+				searchParam: action.searchParam,
+				gifsFound: []
       };
     default:
       return state;

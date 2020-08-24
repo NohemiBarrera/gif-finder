@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GET_TOP_GIFS } from "./types";
+import { GET_TOP_GIFS, SEARCH_GIFS, GIF_FILTER_CHANGE } from "./types";
 
 export const getTopGifs = () => (dispatch, getState) => {
   axios
@@ -13,4 +13,25 @@ export const getTopGifs = () => (dispatch, getState) => {
       });
     })
     .catch((err) => console.log(err));
+};
+
+export const getGifs = (searchParam) => (dispatch, getState) => {
+  axios
+    .get(
+      `https://api.giphy.com/v1/gifs/search?q=${searchParam}&api_key=${process.env.REACT_APP_GIPHY_API_KEY}&limit=24`
+    )
+    .then((res) => {
+      dispatch({
+        type: SEARCH_GIFS,
+        payload: res.data.data,
+      });
+    })
+    .catch((err) => console.log(err));
+};
+
+export const changeFilter = (newFilter) => {
+  return {
+    type: GIF_FILTER_CHANGE,
+    searchParam: newFilter,
+  };
 };
