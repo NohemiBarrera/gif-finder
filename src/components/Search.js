@@ -9,6 +9,7 @@ import {
   Button,
   FormControl,
   ButtonToolbar,
+  Container
 } from "react-bootstrap";
 import logo from "../assets/giphy-logo.png";
 
@@ -38,7 +39,7 @@ class Search extends Component {
     const { gifs, searchParam } = this.props;
 
     return (
-      <>
+      <Container fluid>
         <Row className="d-flex justify-content-center">
           <Col md="2" xs="6">
             <Image src={logo} style={{ maxWidth: "200px" }} />
@@ -89,7 +90,7 @@ class Search extends Component {
             </Row>
           </>
         )}
-      </>
+      </Container>
     );
   }
 }

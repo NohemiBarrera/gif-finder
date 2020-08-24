@@ -10,6 +10,7 @@ import {
   ButtonToolbar,
   FormControl,
   Button,
+  Container
 } from "react-bootstrap";
 import logo from "../assets/giphy-logo.png";
 
@@ -27,7 +28,7 @@ class TopGifs extends Component {
     const { topGifs } = this.props;
 
     return (
-      <>
+      <Container fluid>
         <Row className="d-flex justify-content-center">
           <Col md="2" xs="6">
             <Image src={logo} style={{ maxWidth: "200px" }} />
@@ -37,7 +38,7 @@ class TopGifs extends Component {
           className="mb-3 justify-content-center mt-1"
           aria-label="Toolbar with Button groups"
         >
-          <Link to="/search" className="d-flex">
+          <Link to="/" className="d-flex">
             <FormControl
               type="text"
               placeholder=""
@@ -65,7 +66,7 @@ class TopGifs extends Component {
             </Col>
           ))}
         </Row>
-      </>
+      </Container>
     );
   }
 }

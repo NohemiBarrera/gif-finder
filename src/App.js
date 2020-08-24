@@ -14,11 +14,11 @@ function App() {
     <Provider store={store}>
       <BrowserRouter>
         <Fragment>
-          <Container fluid>
+          <Container fluid className="p-0">
             <TopNavbar/>
             <Switch>
-              <Route exact path="/" component={TopGifs}/>
-              <Route excat path="/search" component={Search} />
+              <Route exact path="/" component={Search}/>
+              <Route excat path="/trending" component={TopGifs} />
             </Switch>
           </Container>
         </Fragment>
