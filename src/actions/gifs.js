@@ -1,12 +1,12 @@
 import axios from "axios";
 import { GET_TOP_GIFS, SEARCH_GIFS, GIF_FILTER_CHANGE } from "./types";
 
-const API_KEY = `${process.env.REACT_APP_GIPHY_API_KEY}`;
+/*const API_KEY = `${process.env.REACT_APP_GIPHY_API_KEY}`;*/
 
 export const getTopGifs = () => (dispatch, getState) => {
   axios
     .get(
-      `https://api.giphy.com/v1/gifs/trending?api_key=${API_KEY}&limit=24&rating=g`
+      `https://api.giphy.com/v1/gifs/trending?api_key=8VND2G6Ggok7vqCZeVGxSaSPZdtzLk8N&limit=24&rating=g`
     )
     .then((res) => {
       dispatch({
@@ -20,7 +20,7 @@ export const getTopGifs = () => (dispatch, getState) => {
 export const getGifs = (searchParam) => (dispatch, getState) => {
   axios
     .get(
-      `https://api.giphy.com/v1/gifs/search?q=${searchParam}&api_key=${API_KEY}&limit=24`
+      `https://api.giphy.com/v1/gifs/search?q=${searchParam}&api_key=8VND2G6Ggok7vqCZeVGxSaSPZdtzLk8N&limit=24`
     )
     .then((res) => {
       dispatch({
